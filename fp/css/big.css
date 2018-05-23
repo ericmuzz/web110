@@ -1,0 +1,217 @@
+/* Eric's Portal Page Stylesheet */
+
+/* Start GLOBAL RULES */
+html {
+    background-color: #847778;
+    font-family: Montserrat, sans-serif;
+    background-image: url(../images/tiramisu.JPG); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+div.wrapper {
+ /*background-color: #fff;*/
+ width: 100%;
+ margin: auto;/* if this is smaller than its parent HTML, then center it within the parent*/
+ overflow: auto; /*be aware of any floated objects and expand to include them */
+ min-height: 600px;
+ 
+}
+aside{
+    color: #dbfade;
+}
+
+p {
+    margin-left:1em;
+    color: #dbfade;
+}
+
+h1, h2, h3 {
+    margin-left: .5em;
+}
+
+.pageID{
+    color: #dbfade;
+}
+
+a {
+    color:#dbfade;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color:#3E3F3D;
+    text-decoration: underline;
+}
+
+h1>a {
+    color:#dbfade;
+}
+
+h1>a:hover {
+    text-decoration: none;
+}
+
+figure{
+    display: block;
+    margin: 2em;
+}
+div.gallery img{
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    border-radius: 30px 30px 30px 30px;
+    border: 1px solid #dbfade; /* width style color */
+    width: 25%;
+    clear: both;
+}
+div.column{
+    float: left;
+    width: 33%;
+}
+div.gallery{
+    text-align: inherit;
+    color: #dbfade;
+}
+div.contact-feedback{
+    color: #dbfade;
+}
+img.title{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+img.dani{
+    float: left;
+    width: 50%;
+    border: 1px solid #dbfade;
+    border-radius: 20px;
+    margin-right: 1em;
+}
+img.menu{
+    display: block;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+    width: 65%;
+    border: 1px solid #dbfade;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+
+/*Start embedresponsively.com rules*/
+.embed-container {
+    position: relative; 
+    padding-bottom: 56.25%; 
+    height: 0; 
+    overflow: hidden; 
+    max-width: 100%; 
+} 
+.embed-container map{
+    position: center;
+}
+
+.embed-container.month{  
+    width: 100%; 
+    height: 5em; 
+}
+.embed-container.agenda{
+    display: none;
+}
+@media all and (max-width:860px) {
+    div.embed-container.agenda{
+        display: block;
+    }
+    div.embed-container.month{
+        display: none;
+    }
+    div.embed-container.map{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: center;
+    }
+}
+/* End embedresponsively rules */
+footer{
+    text-align: center;
+    clear: both;
+}
+
+/* End GLOBAL RULES */
+
+
+/* Start RESPONSIVE RULES */
+
+/* DESKTOP */
+@media all and (min-width:700px) {
+    
+    /*left column*/
+    section{
+        float: left;
+        width: 74%;
+    }    
+    
+    /*right column*/
+    aside{
+        float: right;
+        width: 25%;
+    }
+
+}
+
+
+/* PHONE */
+@media all and (max-width:699px) {
+    
+    div.wrapper {
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+table, thead, tbody, th, td, tr { 
+		display: block;
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%;
+        text-align: right;
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+        font-weight: bold;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 50%; 
+		white-space: nowrap;
+        text-align: left;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Goody"; }
+	td:nth-of-type(2):before { content: "Flavor(Weekly)"; }
+	td:nth-of-type(3):before { content: "Vegan, GF, None"; }
+	td:nth-of-type(4):before { content: "Price"; }
+	
+}
+}
+/* End RESPONSIVE RULES */
